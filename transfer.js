@@ -6,9 +6,9 @@ function Transfer(req, resp) {
 }
 
 /**
- * [@description](/user/description) 计算上次的断点信息
- * [@param](/user/param) {string} Range 请求http头文件中的断点信息，如果没有则为undefined，格式（range: bytes=232323-）
- * [@return](/user/return) {integer} startPos 开始的下载点
+ * 计算上次的断点信息
+ * [@param] {string} Range 请求http头文件中的断点信息，如果没有则为undefined，格式（range: bytes=232323-）
+ * [@return] {integer} startPos 开始的下载点
  */
 Transfer.prototype._calStartPosition = function(Range) {
     var startPos = 0;
@@ -20,8 +20,8 @@ Transfer.prototype._calStartPosition = function(Range) {
 };
 
 /**
- * [@description](/user/description) 配置头文件
- * [@param](/user/param) {object} Config 头文件配置信息（包含了下载的起始位置和文件的大小）
+ * 配置头文件
+ * [@param] {object} Config 头文件配置信息（包含了下载的起始位置和文件的大小）
  */
 Transfer.prototype._configHeader = function(Config) {
     var startPos = Config.startPos,
@@ -40,9 +40,9 @@ Transfer.prototype._configHeader = function(Config) {
 };
 
 /**
- * [@description](/user/description) 初始化配置信息
- * [@param](/user/param) {string} filePath
- * [@param](/user/param) {function} down 下载开始的回调函数
+ * 初始化配置信息
+ * [@param] {string} filePath
+ * [@param] {function} down 下载开始的回调函数
  */
 Transfer.prototype._init = function(filePath, down) {
     var config = {};
@@ -61,8 +61,8 @@ Transfer.prototype._init = function(filePath, down) {
 };
 
 /**
- * [@description](/user/description) 生成大文件文档流，并发送
- * [@param](/user/param) {string} filePath 文件地址
+ * 生成大文件文档流，并发送
+ * [@param] {string} filePath 文件地址
  */
 Transfer.prototype.Download = function(filePath) {
     var self = this;
