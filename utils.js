@@ -21,3 +21,13 @@ var inEffectiveTime = function (startDate, endDate) {
     var now = new Date().getTime();
     return start <= now && now <= end;
 };
+
+/**
+ * 生成补零id
+ * @param str
+ * @returns {str}
+ */
+var generateId = function (str) {
+    var pad = '000000';
+    return pad.substring(0, pad.length - str.length) + str;
+};
